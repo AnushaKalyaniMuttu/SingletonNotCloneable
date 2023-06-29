@@ -1,0 +1,22 @@
+package com.employee;
+
+public class Singleton implements Cloneable {
+    private static Singleton instance;
+
+    private Singleton() {
+        // private constructor
+    }
+
+    public static Singleton getInstance() {
+        if (instance == null) {
+            instance = new Singleton();
+        }
+        return instance;
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        throw new CloneNotSupportedException("Singleton cannot be cloned.");
+    }
+}
+
